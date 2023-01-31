@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
       <div class="container-fluid bg-white container-navbar">
         <a class="navbar-brand w-25" href=""
@@ -30,13 +30,13 @@
     <div class="w-100 photo-bg">
       <div class="d-flex title-container text-center justify-content-center">
         <div class="container-text px-4">
-          <h1 class="text-white title-big">Indaco Decori <br />azienda di Adriano e filippo Simeoni</h1>
-          <p class="text-white text-info py-3 fs-4">
-            specializzati da più di 30 anni in tinteggiature interne ed esterne, decorazioni, rivestimenti termici a
-            cappotto <br />
-            cartongessi, controsoffittature, contropareti e verniciature
+          <h1 class="text-white title-big">INDACO DECORI <br />azienda di Adriano e Filippo Simeoni</h1>
+          <p class="text-white text-info py-4 fs-4">
+            Più di 30 anni di esperienza
           </p>
-          <button type="button" class="btn btn-danger">Chiedi un preventivo</button>
+          <button type="button" class="btn btn-danger btn-lg ">Chiedi un preventivo</button>
+          
+          
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
+    
   },
 };
 </script>
@@ -83,7 +83,7 @@ export default {
 // NAV BAR ITEMS
 
 .title-container {
-  padding-top: 10rem;
+  padding-top: 7rem;
   .container-text {
     padding-top: 2rem;
     .title-big {
@@ -96,7 +96,7 @@ export default {
 }
 
 .photo-bg {
-  height: 900px;
+  height: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

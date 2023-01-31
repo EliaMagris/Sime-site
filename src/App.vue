@@ -1,24 +1,32 @@
 <template>
   <div id="app"> 
-    <HeaderSim msg="Welcome to Your Vue.js App"/>
+    <HeaderSim/>
+    <MainSim/>
   </div>
 </template>
 
 <script>
 import HeaderSim from './components/HeaderSim.vue'
+import MainSim from './components/MainSim.vue'
 
 export default {
   name: 'App',
   components: {
-    HeaderSim
+    HeaderSim,
+    MainSim
   }
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
 </style>
