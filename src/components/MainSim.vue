@@ -35,34 +35,38 @@
 export default {
   name: 'MainSim',
   props: {},
+  data() {
+    return {
+      slideIndex: 1
+    };
+  },
+  mounted() {
+    this.showSlides(this.slideIndex);
+  },
+  methods: {
+    plusSlides(n) {
+      this.showSlides(this.slideIndex += n);
+    },
+    currentSlide(n) {
+      this.showSlides(this.slideIndex = n);
+    },
+    showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { this.slideIndex = 1 }    
+      if (n < 1) { this.slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[this.slideIndex - 1].style.display = "block";  
+      dots[this.slideIndex - 1].className += " active";
+    }
+  }
 };
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
