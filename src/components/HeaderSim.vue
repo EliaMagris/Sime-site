@@ -29,15 +29,6 @@
         <a class="navbar-brand w-25 special-center-nav" href="#"></a>
       </div>
     </nav>
-    <div class="w-100 photo-bg">
-      <div class="d-flex title-container text-center justify-content-center">
-        <div class="container-text px-4">
-          <h1 class="text-white title-big">INDACO DECORI <br />azienda di Adriano e Filippo Simeoni</h1>
-          <p class="text-white text-info py-4 fs-4">Più di 30 anni di esperienza</p>
-          <button type="button" class="btn btn-danger btn-lg">Chiedi un preventivo</button>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -54,9 +45,6 @@ export default {
   .logo-size {
     width: 50%;
   }
-  .title-big {
-    font-size: 3rem;
-  }
 }
 @media screen and (max-width: 991px) {
   .logo-size {
@@ -71,31 +59,9 @@ export default {
   .logo-size {
     width: 100%;
   }
-  .title-big {
-    font-size: 2rem;
-  }
+  
 }
 
 // NAV BAR ITEMS
 
-.title-container {
-  padding-top: 7rem;
-  .container-text {
-    padding-top: 2rem;
-    .title-big {
-      text-shadow: 2px 2px 4px #000000;
-    }
-    .text-info {
-      text-shadow: 2px 2px 4px #000000;
-    }
-  }
-}
-
-.photo-bg {
-  height: 600px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../assets/img/foto-1/5.jpg);
-}
 </style>

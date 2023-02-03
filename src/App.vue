@@ -1,21 +1,18 @@
 <template>
   <div id="app"> 
-    <router-view></router-view>
     <HeaderSim/>
-    <MainSim/>
+    <router-view></router-view>
       
   </div>
 </template>
 
 <script>
 import HeaderSim from './components/HeaderSim.vue'
-import MainSim from './components/MainSim.vue'
 
 export default {
   name: 'App',
   components: {
     HeaderSim,
-    MainSim
   }
 }
 </script>
