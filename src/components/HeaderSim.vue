@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
       <div class="container-fluid bg-white container-navbar">
         <a class="navbar-brand w-25">
-          <router-link to="/about-us">
+          <router-link to="/">
             <img class="logo-size" src="../assets/img/LOGO INDACO DECORI.png" alt="" />
           </router-link>
         </a>
@@ -18,15 +18,16 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-around" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active fw-bold fs-5 p-0" aria-current="page" href="#">Contattaci</a>
+            <router-link to="/about-us">
+            <a class="nav-link active fw-bold fs-5 px-3" aria-current="page" href="#">Contattaci</a>
+            </router-link>
           </div>
           <div class="navbar-nav">
-            <a class="nav-link active fw-bold p-0 fs-5" href="#">Chi siamo</a>
+            <a class="nav-link active fw-bold px-3 fs-5" href="#">Chi siamo</a>
           </div>
         </div>
-        <a class="navbar-brand w-25 special-center-nav" href="#"></a>
       </div>
     </nav>
   </div>

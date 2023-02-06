@@ -1,70 +1,67 @@
 <template>
-  <div>
-    <div id="app">
-      <div id="hero">
-        <h1>NEON<br />EFFECT</h1>
+  <div class="Container">
+    <form class="py-5 px-5 row g-3">
+      <div class="col-md-6 ">
+        <label for="inputName" class="text-white form-label">Name</label>
+        <input type="text" class="form-control bg-info" placeholder="Mario Rossi.." aria-label="First name" />
       </div>
-    </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="text-white form-label">Email</label>
+        <input type="email" class="form-control" placeholder="@gmail.com..." id="inputEmail4" />
+      </div>
+      <!-- <div class="col-12">
+        <label for="inputAddress" class="text-white form-label">Indirizzo</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="" />
+      </div> -->
+      <div class="col-md-6">
+        <label for="inputCity" class="text-white form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" />
+      </div>
+      <div class="col-md-6">
+        <label for="inputState" class="text-white form-label">State</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="col-12">
+       <label for="inputState" class="text-white form-label">Testo</label>
+  <textarea class="form-control" placeholder="Descrivi ciò di cui hai bisogno" id="floatingTextarea2" style="height: 100px"></textarea>
+  
+</div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" />
+          <label class="form-check-label" for="gridCheck"> Check me out </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
-import { neonCursor } from 'threejs-toys';
-
 export default {
-  name: 'AboutUs',
-  components: {
-  },
-  mounted() {
-    neonCursor({
-      el: document.getElementById('app'),
-      shaderPoints: 16,
-      curvePoints: 80,
-      curveLerp: 0.5,
-      radius1: 5,
-      radius2: 30,
-      velocityTreshold: 10,
-      sleepRadiusX: 100,
-      sleepRadiusY: 100,
-      sleepTimeCoefX: 0.0025,
-      sleepTimeCoefY: 0.0025,
-    }).mount('#app');
-  },
+  name: 'AboutUS',
+  props: {},
+  data() {},
+  mounted() {},
+  methods: {},
 };
 </script>
 
-<style lang="scss" scoped>
-#app {
-  overflow: hidden;
-  touch-action: pan-up;
-  color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+@media screen and (min-width: 992px) {
 }
-
-#app h1 {
-  --fontSize: 60px;
-  --lineHeight: 80px;
-  width: auto;
-  height: calc(2 * var(--lineHeight));
-  line-height: var(--lineHeight);
-  margin: calc(50vh - var(--lineHeight)) auto 0;
-  font-size: var(--fontSize);
-  text-transform: uppercase;
+@media screen and (max-width: 991px) {
 }
-
-#app a {
-  margin-top: 10px;
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
+@media screen and (max-width: 576px) {
 }
-
-#app canvas {
-  display: block;
-  position: fixed;
-  z-index: -1;
-  top: 0;
+.Container{
+  background-color: rgb(134,0,0);
+  height: 100%;
 }
 </style>
