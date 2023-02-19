@@ -11,37 +11,25 @@
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center">
+    <h2>Chi siamo</h2>
+    <div class="d-flex  justify-content-center">
+      
       <div>
-        <h2>Chi siamo</h2>
-        <div class="slideshow-container">
-          <!-- Full-width slides/quotes -->
-          <div class="mySlides">
-            <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
-            <p class="author">- John Keats</p>
-          </div>
+        
+      <div class="slideshow">
+    <div class="slideshow-container">
+      <div v-for="(slide, index) in slides" :key="index" class="slide" :class="{'active': index === currentIndex}">
+        <p>{{ slide.text }}</p>
+      </div>
+    </div>
+    <div class="controls">
+      <button @click="prevSlide" class="prev btn btn-danger">Prev</button>
+      <button @click="nextSlide" class="next btn btn-danger">Next</button>
+    </div>
+  </div>
 
-          <div class="mySlides">
-            <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
-            <p class="author">- Ernest Hemingway</p>
-          </div>
-
-          <div class="mySlides">
-            <q>I have not failed. I've just found 10,000 ways that won't work.</q>
-            <p class="author">- Thomas A. Edison</p>
-          </div>
-
-          <!-- Next/prev buttons -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-
-        <!-- Dots/bullets/indicators -->
-        <div class="dot-container">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+        
+        
       </div>
     </div>
   </div>
@@ -51,45 +39,50 @@
 export default {
   name: 'MainSim',
   props: {},
-  data() {
+   data() {
     return {
-      slideIndex: 1,
+      slides: [
+        {
+          
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          
+          text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        },
+        {
+          
+          text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores."
+        }
+      ],
+      currentIndex: 0,
+      intervalId: null
     };
   },
   mounted() {
-    this.showSlides(this.slideIndex);
+    this.startSlideshow();
   },
   methods: {
-
-    
-    plusSlides(n) {
-      this.showSlides((this.slideIndex += n));
+    startSlideshow() {
+      this.intervalId = setInterval(() => {
+        this.nextSlide();
+      }, 5000);
     },
-    currentSlide(n) {
-      this.showSlides((this.slideIndex = n));
+    stopSlideshow() {
+      clearInterval(this.intervalId);
     },
-    showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName('mySlides');
-      var dots = document.getElementsByClassName('dot');
-      if (n > slides.length) {
-        this.slideIndex = 1;
-      }
-      if (n < 1) {
-        this.slideIndex = slides.length;
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(' active', '');
-      }
-      slides[this.slideIndex - 1].style.display = 'block';
-      dots[this.slideIndex - 1].className += ' active';
+    nextSlide() {
+      this.currentIndex = (this.currentIndex + 1) % this.slides.length;
     },
+    prevSlide() {
+      this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    }
   },
-};
-</script>
+  beforeDestroy() {
+    this.stopSlideshow();
+  }
+}
+  </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
@@ -129,74 +122,33 @@ export default {
   background-image: url(../assets/img/foto-1/5.jpg);
 }
 
-/* Slideshow container */
-.slideshow-container {
+.slideshow {
   position: relative;
-  background: #f1f1f1f1;
 }
-
-/* Slides */
-.mySlides {
+.slideshow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.slide {
   display: none;
-  padding: 80px;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+.controls {
   text-align: center;
 }
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -30px;
-  padding: 16px;
-  color: #888;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+button {
+  margin: 0 0.5rem;
 }
-
-/* Position the "next button" to the right */
-.next {
-  position: absolute;
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-  color: white;
-}
-
-/* The dot/bullet/indicator container */
-.dot-container {
-  text-align: center;
-  padding: 20px;
-  background: #ddd;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-/* Add a background color to the active dot/circle */
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Add an italic font style to all quotes */
-q {font-style: italic;}
-
-/* Add a blue color to the author */
-.author {color: cornflowerblue;}
 </style>
