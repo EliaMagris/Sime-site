@@ -19,7 +19,7 @@
       <div class="slideshow">
     <div class="slideshow-container">
       <div v-for="(slide, index) in slides" :key="index" class="slide" :class="{'active': index === currentIndex}">
-        <p>{{ slide.text }}</p>
+        <h5>{{ slide.text }}</h5>
       </div>
     </div>
     <div class="controls">
@@ -44,15 +44,15 @@ export default {
       slides: [
         {
           
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          text: "Con la collaborazione di mio figlio Filippo realizziamo con cura e passione ogni intervento affidatoci al fine di garantire ai nostri clienti affidabilità e precisione cercando di soddisfare ogni esigenza portandola alla soluzione più accurata e adatta alle proprie necessità."
         },
         {
           
-          text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+          text: "Utilizziamo prodotti di alta qualità all'acqua e atossici per la prevenzione di muffe, problemi di condense e umidità garantendone i risultati nel tempo."
         },
         {
           
-          text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores."
+          text: "Le coibentazioni esterne le realizziamo con materiali innovativi e performanti di ultima generazione, rimaniamo a disposizione per sopralluoghi e formulazione di preventivi gratuiti."
         }
       ],
       currentIndex: 0,
@@ -66,7 +66,7 @@ export default {
     startSlideshow() {
       this.intervalId = setInterval(() => {
         this.nextSlide();
-      }, 5000);
+      }, 8000);
     },
     stopSlideshow() {
       clearInterval(this.intervalId);
@@ -138,7 +138,12 @@ export default {
   max-width: 80%;
   margin: 0 auto;
   opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out; /* Prefisso per il browser WebKit */
   transition: opacity 1s ease-in-out;
+
+  // h5{
+  //   line-height: 3rem;
+  // }
 }
 
 .slide.active {
