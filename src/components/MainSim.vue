@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-100 photo-bg">
+    <div class="w-100 pt-5 photo-bg">
       <div class="d-flex title-container text-center justify-content-center">
         <div class="container-text px-4">
           <h1 class="text-white title-big">
