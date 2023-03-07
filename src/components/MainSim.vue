@@ -3,62 +3,67 @@
     <div class="w-100 pt-5 photo-bg">
       <div class="d-flex title-container text-center justify-content-center">
         <div class="container-text px-4">
-          <h1 class="text-white title-big">
-            INDACO DECORI <br />azienda di Adriano e Filippo Simeoni
-          </h1>
-          <p class="text-white text-info py-4 fs-4">
-            Più di 30 anni di esperienza
-          </p>
+          <h1 class="text-white title-big">INDACO DECORI <br />azienda di Adriano e Filippo Simeoni</h1>
+          <p class="text-white text-info py-4 fs-4">Più di 30 anni di esperienza</p>
           <router-link to="/about-us">
-            <button type="button" class="btn btn-danger btn-lg">
-              Chiedi un preventivo
-            </button>
+            <button type="button" class="btn btn-danger btn-lg">Chiedi un preventivo</button>
           </router-link>
         </div>
       </div>
     </div>
-    <h2 class="mb-md-2 ChiSiam text-center pt-3 pb-lg-3 pb-xl-2"><i>Chi siamo</i></h2>
-    <div class="d-flex justify-content-center">
-      <div>
-        <div class="slideshow">
-          <div class="slideshow-container">
-            <div
-              v-for="(slide, index) in slides"
-              :key="index"
-              class="slide"
-              :class="{ active: index === currentIndex }"
-            >
-              <h5 class="testoD">{{ slide.text }}</h5>
+    <div class="Whois">
+      <h2 class="mb-md-2 ChiSiam text-center pt-3 pb-lg-3 pb-xl-2"><i>Chi siamo</i></h2>
+      <div class="d-flex justify-content-center">
+        <div class="pb-5">
+          <div class="slideshow">
+            <div class="slideshow-container">
+              <div
+                v-for="(slide, index) in slides"
+                :key="index"
+                class="slide"
+                :class="{ active: index === currentIndex }"
+              >
+                <h5 class="testoD">{{ slide.text }}</h5>
+              </div>
             </div>
-          </div>
-          <div class="controls mt-lg-3 mt-xl-2">
-            <button @click="prevSlide" class="prev btn btn-danger">Prev</button>
-            <button @click="nextSlide" class="next btn btn-danger">Next</button>
+            <div class="controls mt-lg-3 mt-xl-2">
+              <button @click="prevSlide" class="prev btn btn-danger">Prev</button>
+              <button @click="nextSlide" class="next btn btn-danger">Next</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div>
-      <h2>WEEELAAAAA</h2>
+      <!-- <h2>I nostri lavori</h2> -->
+      <div class="m-0" >
+        <svg class="m-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#61fafa"
+            fill-opacity="1"
+            d="M0,32L80,32C160,32,320,32,480,48C640,64,800,96,960,90.7C1120,85,1280,43,1360,21.3L1440,0L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MainSim",
+  name: 'MainSim',
   props: {},
   data() {
     return {
       slides: [
         {
-          text: "Con la collaborazione di mio figlio Filippo realizziamo con cura e passione ogni intervento affidatoci al fine di garantire ai nostri clienti affidabilità e precisione cercando di soddisfare ogni esigenza portandola alla soluzione più accurata e adatta alle proprie necessità.",
+          text: 'Con la collaborazione di mio figlio Filippo realizziamo con cura e passione ogni intervento affidatoci al fine di garantire ai nostri clienti affidabilità e precisione cercando di soddisfare ogni esigenza portandola alla soluzione più accurata e adatta alle proprie necessità.',
         },
         {
           text: "Utilizziamo prodotti di alta qualità all'acqua e atossici per la prevenzione di muffe, problemi di condense e umidità garantendone i risultati nel tempo.",
         },
         {
-          text: "Le coibentazioni esterne le realizziamo con materiali innovativi e performanti di ultima generazione, rimaniamo a disposizione per sopralluoghi e formulazione di preventivi gratuiti.",
+          text: 'Le coibentazioni esterne le realizziamo con materiali innovativi e performanti di ultima generazione, rimaniamo a disposizione per sopralluoghi e formulazione di preventivi gratuiti.',
         },
       ],
       currentIndex: 0,
@@ -69,25 +74,24 @@ export default {
     this.startSlideshow();
   },
   methods: {
-    startSlideshow() {
-      this.intervalId = setInterval(() => {
-        this.nextSlide();
-      }, 8000);
-    },
-    stopSlideshow() {
-      clearInterval(this.intervalId);
-    },
+    // startSlideshow() {
+    //   this.intervalId = setInterval(() => {
+    //     this.nextSlide();
+    //   }, 8000);
+    // },
+    // stopSlideshow() {
+    //   clearInterval(this.intervalId);
+    // },
     nextSlide() {
       this.currentIndex = (this.currentIndex + 1) % this.slides.length;
     },
     prevSlide() {
-      this.currentIndex =
-        (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+      this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
     },
   },
-  beforeDestroy() {
-    this.stopSlideshow();
-  },
+  // beforeDestroy() {
+  //   this.stopSlideshow();
+  // },
 };
 </script>
 
@@ -99,16 +103,15 @@ export default {
   }
 }
 @media screen and (max-width: 991px) {
-  .ChiSiam{
+  .ChiSiam {
     margin-bottom: 3rem;
-  };
-  
+  }
 }
 @media screen and (max-width: 576px) {
   .title-big {
     font-size: 2rem;
   }
-  .controls{
+  .controls {
     margin-top: 3rem;
   }
 }
@@ -126,6 +129,10 @@ export default {
       text-shadow: 2px 2px 4px #000000;
     }
   }
+}
+
+.Whois {
+  background-color: #61fafa;
 }
 
 .photo-bg {

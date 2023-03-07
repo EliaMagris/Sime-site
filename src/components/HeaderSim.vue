@@ -21,12 +21,14 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav text-decoration-none">
             <router-link class="text-decoration-none" to="/about-us">
-            <a class="nav-link active fw-bold fs-5 text-decoration-none px-3" aria-current="page" href="#">Contattaci</a>
+              <a class="nav-link active fw-bold fs-5 text-decoration-none px-3" aria-current="page" href="#"
+                >Contattaci</a
+              >
             </router-link>
           </div>
-          <div class="navbar-nav">
+          <!-- <div class="navbar-nav">
             <a class="nav-link active fw-bold px-3 fs-5" href="#">Chi siamo</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>
@@ -60,9 +62,7 @@ export default {
   .logo-size {
     width: 100%;
   }
-  
 }
 
 // NAV BAR ITEMS
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app"> 
     <HeaderSim/>
-    <router-view></router-view>
+    <router-view class="pt-5"></router-view>
       
   </div>
 </template>
