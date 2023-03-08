@@ -36,14 +36,9 @@
     </div>
     <div>
       <!-- <h2>I nostri lavori</h2> -->
-      <div class="m-0" >
-        <svg class="m-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#61fafa"
-            fill-opacity="1"
-            d="M0,32L80,32C160,32,320,32,480,48C640,64,800,96,960,90.7C1120,85,1280,43,1360,21.3L1440,0L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-          ></path>
-        </svg>
+      <div class="ourWorks">
+        
+        <h1>ciao</h1>
       </div>
     </div>
   </div>
@@ -135,6 +130,11 @@ export default {
   background-color: #61fafa;
 }
 
+.ourWorks{
+  background-image: url(../assets/img/wave.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .photo-bg {
   height: 600px;
   background-position: center;
