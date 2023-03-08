@@ -1,5 +1,5 @@
 <template>
-  <div class="position-fixed w-100">
+  <div class="position-fixed z-1 w-100">
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
       <div class="container-fluid bg-white container-navbar">
         <a class="navbar-brand w-25">
