@@ -1,18 +1,30 @@
 <template>
   <div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
     <div class="w-100 pt-5 photo-bg">
       <div class="d-flex title-container text-center justify-content-center">
         <div class="container-text px-4">
-          <h1 class="text-white title-big">INDACO DECORI <br />azienda di Adriano e Filippo Simeoni</h1>
-          <p class="text-white text-info py-4 fs-4">Più di 30 anni di esperienza</p>
+          <h1 class="text-white title-big">
+            INDACO DECORI <br />azienda di Adriano e Filippo Simeoni
+          </h1>
+          <p class="text-white text-info py-4 fs-4">
+            Più di 30 anni di esperienza
+          </p>
           <router-link to="/about-us">
-            <button type="button" class="btn btn-danger btn-lg">Chiedi un preventivo</button>
+            <button type="button" class="btn btn-danger btn-lg">
+              Chiedi un preventivo
+            </button>
           </router-link>
         </div>
       </div>
     </div>
     <div class="Whois">
-      <h2 class="mb-md-2 ChiSiam text-center pt-3 pb-lg-3 pb-xl-2"><i>Chi siamo</i></h2>
+      <h2 class="mb-md-2 ChiSiam text-center pt-3 pb-lg-3 pb-xl-2">
+        <i>Chi siamo</i>
+      </h2>
       <div class="d-flex justify-content-center">
         <div class="pb-5">
           <div class="slideshow">
@@ -27,38 +39,121 @@
               </div>
             </div>
             <div class="controls mt-lg-3 mt-xl-2">
-              <button @click="prevSlide" class="prev btn btn-danger">Prev</button>
-              <button @click="nextSlide" class="next btn btn-danger">Next</button>
+              <button @click="prevSlide" class="prev btn btn-danger">
+                Prev
+              </button>
+              <button @click="nextSlide" class="next btn btn-danger">
+                Next
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div>
+    <div class="position-relative">
       <!-- <h2>I nostri lavori</h2> -->
       <div class="ourWorks">
-        
-        <h1>ciao</h1>
+        <img class="p-0 m-0" src="../assets/img/wave.svg" alt="" />
+        <div>
+          <h2>ciao</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div
+                  id="carouselExampleSlidesOnly"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="https://via.placeholder.com/800x400?text=Image+1"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="https://via.placeholder.com/800x400?text=Image+1"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="https://via.placeholder.com/800x400?text=Image+1"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div
+                  id="carouselExampleSlidesOnly"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="../assets/img/LOGO INDACO DECORI.png"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="../assets/img/LOGO INDACO DECORI.png"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="../assets/img/LOGO INDACO DECORI.png"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2>wewe</h2>
+        </div>
       </div>
     </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   </div>
+
+  
 </template>
 
 <script>
+
+
 export default {
-  name: 'MainSim',
+  name: "MainSim",
   props: {},
   data() {
     return {
       slides: [
         {
-          text: 'Con la collaborazione di mio figlio Filippo realizziamo con cura e passione ogni intervento affidatoci al fine di garantire ai nostri clienti affidabilità e precisione cercando di soddisfare ogni esigenza portandola alla soluzione più accurata e adatta alle proprie necessità.',
+          text: "Con la collaborazione di mio figlio Filippo realizziamo con cura e passione ogni intervento affidatoci al fine di garantire ai nostri clienti affidabilità e precisione cercando di soddisfare ogni esigenza portandola alla soluzione più accurata e adatta alle proprie necessità.",
         },
         {
           text: "Utilizziamo prodotti di alta qualità all'acqua e atossici per la prevenzione di muffe, problemi di condense e umidità garantendone i risultati nel tempo.",
         },
         {
-          text: 'Le coibentazioni esterne le realizziamo con materiali innovativi e performanti di ultima generazione, rimaniamo a disposizione per sopralluoghi e formulazione di preventivi gratuiti.',
+          text: "Le coibentazioni esterne le realizziamo con materiali innovativi e performanti di ultima generazione, rimaniamo a disposizione per sopralluoghi e formulazione di preventivi gratuiti.",
         },
       ],
       currentIndex: 0,
@@ -81,7 +176,8 @@ export default {
       this.currentIndex = (this.currentIndex + 1) % this.slides.length;
     },
     prevSlide() {
-      this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+      this.currentIndex =
+        (this.currentIndex - 1 + this.slides.length) % this.slides.length;
     },
   },
   // beforeDestroy() {
@@ -130,10 +226,12 @@ export default {
   background-color: #61fafa;
 }
 
-.ourWorks{
-  background-image: url(../assets/img/wave.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
+.ourWorks {
+  // background-image: url(../assets/img/wave.svg);
+  // background-size: 100% 100px;
+  position: absolute;
+  width: 100%;
+  top: -2px;
 }
 .photo-bg {
   height: 600px;
