@@ -1,5 +1,7 @@
 <template>
+  
   <div id="app"> 
+ 
     <HeaderSim/>
     <router-view class="pt-5"></router-view>
       

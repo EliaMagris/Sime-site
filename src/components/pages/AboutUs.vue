@@ -1,13 +1,29 @@
 <template>
-  <div class="Container ">
-    <form class="py-5 px-5 row formBoot g-3">
+  <div class="Container">
+    <form
+      ref="form"
+      @submit.prevent="sendEmail"
+      class="py-5 px-5 row formBoot g-3"
+    >
       <div class="col-md-6">
         <label for="inputName" class="text-white form-label">Nome</label>
-        <input type="text" class="form-control" placeholder="Mario Rossi.." aria-label="First name" />
+        <input
+          name="name"
+          type="text"
+          class="form-control"
+          placeholder="Mario Rossi.."
+          aria-label="First name"
+        />
       </div>
       <div class="col-md-6">
         <label for="inputEmail4" class="text-white form-label">Email</label>
-        <input type="email" class="form-control" placeholder="@gmail.com..." id="inputEmail4" />
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          placeholder="@gmail.com..."
+          id="inputEmail4"
+        />
       </div>
       <!-- <div class="col-12">
         <label for="inputAddress" class="text-white form-label">Indirizzo</label>
@@ -15,16 +31,28 @@
       </div> -->
       <div class="col-md-6">
         <label for="inputCity" class="text-white form-label">Provincia</label>
-        <input type="text" class="form-control" id="inputCity" placeholder="Pordenone..." />
+        <input
+          name="luogo"
+          type="text"
+          class="form-control"
+          id="inputCity"
+          placeholder="Pordenone..."
+        />
       </div>
       <div class="col-md-6">
         <label class="form-label text-white" for="phone">Telefono</label>
-        <input type="text" id="phone" class="form-control" data-mdb-input-mask="+48 999-999-999" />
-        
+        <input
+          name="telefono"
+          type="text"
+          id="phone"
+          class="form-control"
+          data-mdb-input-mask="+48 999-999-999"
+        />
       </div>
       <div class="col-12">
         <label for="inputState" class="text-white form-label">Testo</label>
         <textarea
+          name="text"
           class="form-control"
           placeholder="Descrivi ciò di cui hai bisogno"
           id="floatingTextarea2"
@@ -34,23 +62,47 @@
       <div class="col-12">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="gridCheck" />
-          <label class="form-check-label text-white" for="gridCheck"> Check me out </label>
+          <label class="form-check-label text-white" for="gridCheck">
+            Check me out
+          </label>
         </div>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" value="Send" class="btn btn-primary">Sign in</button>
+        <div id="conferma" class="text-light"></div>
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import emailjs from "@emailjs/browser";
+
 export default {
-  name: 'AboutUS',
+  name: "AboutUS",
   props: {},
   data() {},
   mounted() {},
-  methods: {},
+  methods: {
+    sendEmail() {
+      emailjs
+        .sendForm(
+          "service_9kftboo",
+          "template_djrewhz",
+          this.$refs.form,
+          "BwUoq_S_g_lHVwIu2"
+        )
+        .then(
+          (result) => {
+            console.log("SUCCESS!", result.text);
+            document.getElementById('conferma').innerHTML = "Congratulazioni! Email inviata con successo! ti risponderò non appena possibile :)"
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    },
+  },
 };
 </script>
 
@@ -72,7 +124,7 @@ export default {
   background-color: rgb(134, 0, 0);
   height: 100%;
   padding-top: 4.5rem;
-  .formBoot{
+  .formBoot {
     margin-right: 0;
     background-color: rgb(134, 0, 0);
   }

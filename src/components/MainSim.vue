@@ -1,9 +1,9 @@
 <template>
   <div>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
 
@@ -35,7 +35,7 @@
               <div
                 v-for="(slide, index) in slides"
                 :key="index"
-                class="slide"
+                class="slider"
                 :class="{ active: index === currentIndex }"
               >
                 <h5 class="testoD">{{ slide.text }}</h5>
@@ -55,54 +55,151 @@
     </div>
     <div class="position-relative">
       <!-- <h2>I nostri lavori</h2> -->
-      <div class="ourWorks">
+      <div class="ourWorks bg-warning">
         <img class="p-0 m-0" src="../assets/img/wave.svg" alt="" />
         <div>
-          <h2>ciao</h2>
+          <h2 class="fs-1 text-center py-2"> <i>I nostri lavori</i> </h2>
 
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-
-                
+          <div class="carosello pb-5 m-auto">
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner rounded-2">
+                <div class="carousel-item active">
+                  <img
+                    src="../assets/img/foto-1/1.jpg"
+                    class="d-block  w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-1/2.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-1/3.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-1/4.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-1/6.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-1/7.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-1/8.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-1/9.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-2/1.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-2/2.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-2/4.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-2/5.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../assets/img/foto-2/7.jpg"
+                    class="d-block w-100"
+                    alt="image"
+                  />
+                </div>
 
               </div>
-              <div class="col-md-6">
-
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../assets/img/foto-2/2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/img/foto-2/2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/img/foto-2/2.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-
-          <h2>wewe</h2>
+          <div class="Ourinfo px-5 py-4 bg-black text-white">
+              <h2>Info</h2>
+              <div>
+                <div>Adriano: <a class="text-light" href="tel:+393899474164">Chiamami</a></div>
+                <div>Filippo: <a class="text-light" href="tel:+393356132110">Chiamami</a></div>
+                <div class="text-white"><font-awesome-icon icon="fa-brands fa-whatsapp" /></div>
+              </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
- 
 </template>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+  crossorigin="anonymous"
+></script>
 <script>
 export default {
   name: "MainSim",
@@ -156,6 +253,10 @@ export default {
   .title-big {
     font-size: 3rem;
   }
+
+  .carosello{
+ width: 75%;
+}
 }
 @media screen and (max-width: 991px) {
   .ChiSiam {
@@ -170,6 +271,7 @@ export default {
     margin-top: 3rem;
   }
 }
+
 
 // NAV BAR ITEMS
 
@@ -215,7 +317,7 @@ export default {
   align-items: center;
   height: 150px;
 }
-.slide {
+.slider {
   display: none;
   text-align: center;
   max-width: 80%;
@@ -224,12 +326,17 @@ export default {
   -webkit-transition: opacity 1s ease-in-out; /* Prefisso per il browser WebKit */
   transition: opacity 1s ease-in-out;
 
-  // h5{
-  //   line-height: 3rem;
-  // }
 }
 
-.slide.active {
+  .carousel-item{
+  img{
+    aspect-ratio: 1;
+  }
+}
+
+
+
+.slider.active {
   display: block;
   opacity: 1;
 }
