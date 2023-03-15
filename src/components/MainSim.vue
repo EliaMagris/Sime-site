@@ -57,7 +57,7 @@
       <!-- <h2>I nostri lavori</h2> -->
       <div class="ourWorks bg-warning">
         <img class="p-0 m-0" src="../assets/img/wave.svg" alt="" />
-        <div>
+        <div class="position-relative">
           <h2 class="fs-1 text-center py-2"> <i>I nostri lavori</i> </h2>
 
           <div class="carosello pb-5 m-auto">
@@ -184,10 +184,14 @@
           </div>
           <div class="Ourinfo px-5 py-4 bg-black text-white">
               <h2>Info</h2>
-              <div>
-                <div>Adriano: <a class="text-light" href="tel:+393899474164">Chiamami</a></div>
-                <div>Filippo: <a class="text-light" href="tel:+393356132110">Chiamami</a></div>
-                <div class="text-white"><font-awesome-icon icon="fa-brands fa-whatsapp" /></div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="py-3">Adriano: <a class="text-light" href="tel:+393899474164"><font-awesome-icon icon="fa-solid fa-phone" /></a> oppure <a href="https://api.whatsapp.com/send?phone=393899474164" target="_blank"><font-awesome-icon icon="fa-brands fa-whatsapp" /></a> </div>
+                <div>Filippo: <a class="text-light" href="tel:+393356132110"><font-awesome-icon icon="fa-solid fa-phone" /></a> oppure <a href="https://api.whatsapp.com/send?phone=393356132110" target="_blank"><font-awesome-icon icon="fa-brands fa-whatsapp" /></a>
+ </div>
+                  </div>
+                </div>          
               </div>
           </div>
         </div>
@@ -333,8 +337,6 @@ export default {
     aspect-ratio: 1;
   }
 }
-
-
 
 .slider.active {
   display: block;

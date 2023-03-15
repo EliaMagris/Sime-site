@@ -13,7 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 // import specific icons /
-import {} from '@fortawesome/free-solid-svg-icons';
+import {faPhone} from '@fortawesome/free-solid-svg-icons';
 
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 
@@ -21,7 +21,7 @@ import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import {} from '@fortawesome/free-regular-svg-icons';
 
 // add icons to the library /
-library.add(faWhatsapp);
+library.add(faWhatsapp, faPhone);
 
 // add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon);
