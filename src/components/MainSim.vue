@@ -53,11 +53,11 @@
         </div>
       </div>
     </div>
-    <div class="position-relative">
+    <div class="">
       <!-- <h2>I nostri lavori</h2> -->
       <div class="ourWorks bg-warning">
-        <img class="p-0 m-0" src="../assets/img/wave.svg" alt="" />
-        <div class="position-relative">
+        <img class="p-0 m-0 swg" src="../assets/img/wave.svg" alt="" />
+        <div class="position-relative cont-our">
           <h2 class="fs-1 text-center py-2"> <i>I nostri lavori</i> </h2>
 
           <div class="carosello pb-5 m-auto">
@@ -184,7 +184,7 @@
           </div>
           <div class="Ourinfo px-5 py-4 bg-black text-white">
               <h2>Info</h2>
-              <div class="container">
+              <div class="container m-0">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="py-3">Adriano: <a class="text-light" href="tel:+393899474164"><font-awesome-icon icon="fa-solid fa-phone" /></a> oppure <a href="https://api.whatsapp.com/send?phone=393899474164" target="_blank"><font-awesome-icon icon="fa-brands fa-whatsapp" /></a> </div>
@@ -260,6 +260,7 @@ export default {
 
   .carosello{
  width: 75%;
+
 }
 }
 @media screen and (max-width: 991px) {
@@ -299,9 +300,18 @@ export default {
 .ourWorks {
   // background-image: url(../assets/img/wave.svg);
   // background-size: 100% 100px;
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: -2px;
+
+  .swg{
+    position: absolute;
+    top: -3px;
+
+    
+  }
+  .cont-our{
+      padding-top: 8%;
+    }
 }
 .photo-bg {
   height: 600px;
@@ -331,12 +341,18 @@ export default {
   transition: opacity 1s ease-in-out;
 
 }
-
+.carousel-inner{
+  height: 750px;
   .carousel-item{
+  height: 100%;
   img{
-    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
   }
 }
+}
+  
 
 .slider.active {
   display: block;
