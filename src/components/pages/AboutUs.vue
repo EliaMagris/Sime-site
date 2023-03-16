@@ -60,14 +60,6 @@
         ></textarea>
       </div>
       <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck" />
-          <label class="form-check-label text-white" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
         <button type="submit" value="Send" class="btn btn-primary">Sign in</button>
         <div id="conferma" class="text-light"></div>
       </div>
@@ -109,21 +101,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @media screen and (min-width: 992px) {
-  // .Container{
-  //   padding-top: 2rem;
-  // }
+  .Container{
+    padding-top: 6rem !important;
+  }
 }
 @media screen and (max-width: 991px) {
+  .Container{
+    padding-top: 4.5rem;
+  }
 }
 @media screen and (max-width: 576px) {
-  // .Container{
-  //   padding-top: 2rem;
-  // }
+  
 }
 .Container {
   background-color: rgb(134, 0, 0);
   height: 100%;
-  padding-top: 4.5rem;
+
   .formBoot {
     margin-right: 0;
     background-color: rgb(134, 0, 0);
