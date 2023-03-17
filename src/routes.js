@@ -18,7 +18,7 @@ const router = new VueRouter({
         {
           path: '/about-us',
           name: 'about-us', 
-          component: AboutUs
+          component: AboutUs,
         }
     ]
 });

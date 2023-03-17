@@ -1,7 +1,11 @@
 <template>
   <div id="app"> 
     <HeaderSim/>
-    <router-view class="pt-5"></router-view>
+    <router-view v-slot="{Component}" class="pt-5">
+      <transition name="route" mode="out-in">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -27,5 +31,20 @@ export default {
  box-sizing: border-box;
  margin: 0;
  padding: 0;
+}
+
+.route-enter-from{
+  opacity: 0;
+  transform: translateX(100px);
+}
+.route-enter-active{
+  transition: ass 0.3s ease-out;
+}
+.route-leave-to{
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.route-leave-active{
+  transition: all 0.3s ease-in;
 }
 </style>
