@@ -41,8 +41,8 @@
               </div>
             </div>
             <div class="controls mt-lg-3 mt-xl-2">
-              <button @click="prevSlide" class="prev btn btn-danger">Prev</button>
-              <button @click="nextSlide" class="next btn btn-danger">Next</button>
+              <button @click="prevSlide" class="prev btn btn-danger"><font-awesome-icon :icon="['fas', 'chevron-left']" /></button>
+              <button @click="nextSlide" class="next btn btn-danger"><font-awesome-icon :icon="['fas', 'chevron-right']" /></button>
             </div>
           </div>
         </div>
@@ -55,8 +55,10 @@
         <div class="position-relative cont-our">
           <h2 class="fs-1 text-center py-2"><i>I nostri lavori</i></h2>
 
+          <!-- primo carosello -->
+
           <div class="carosello pb-5 m-auto">
-            <div id="carouselExample" class="carousel slide">
+            <div id="carouselExample1" class="carousel slide">
               <div class="carousel-inner rounded-2">
                 <div class="carousel-item active">
                   <img src="../assets/img/foto-1/1.jpg" class="d-block w-100" alt="image" />
@@ -82,26 +84,11 @@
                 <div class="carousel-item">
                   <img src="../assets/img/foto-1/9.jpg" class="d-block w-100" alt="image" />
                 </div>
-                <div class="carousel-item">
-                  <img src="../assets/img/foto-2/1.jpg" class="d-block w-100" alt="image" />
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/img/foto-2/2.jpg" class="d-block w-100" alt="image" />
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/img/foto-2/4.jpg" class="d-block w-100" alt="image" />
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/img/foto-2/5.jpg" class="d-block w-100" alt="image" />
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/img/foto-2/7.jpg" class="d-block w-100" alt="image" />
-                </div>
               </div>
               <button
                 class="carousel-control-prev"
                 type="button"
-                data-bs-target="#carouselExample"
+                data-bs-target="#carouselExample1"
                 data-bs-slide="prev"
               >
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -110,14 +97,49 @@
               <button
                 class="carousel-control-next"
                 type="button"
-                data-bs-target="#carouselExample"
+                data-bs-target="#carouselExample1"
                 data-bs-slide="next"
               >
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
+
+            
           </div>
+
+          <!-- secondo carosello -->
+         <div class="rounded-3 w-100">
+          <div id="carouselExample2" class="carousel slide pb-5 carosello m-auto">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="../assets/img/foto-2/1.jpg" class="d-block w-100 rounded-3" alt="image" />
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/img/foto-2/2.jpg" class="d-block w-100 rounded-3" alt="image" />
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/img/foto-2/4.jpg" class="d-block w-100 rounded-3" alt="image" />
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/img/foto-2/5.jpg" class="d-block w-100 rounded-3" alt="image" />
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/img/foto-2/7.jpg" class="d-block w-100 rounded-3" alt="image" />
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+         </div>
+          
+
           <div class="Ourinfo px-5 py-4 bg-black text-white">
             <h2 class="text-center"><i>Info</i></h2>
             <div class="container infocont">
@@ -125,7 +147,9 @@
                 <div class="col-md-6 d-flex justify-content-around flex-column">
                   <div class="Adrian">
                     Adriano:
-                    <a class="text-primary px-2" href="tel:+393356132110"><font-awesome-icon icon="fa-solid fa-phone" /></a>
+                    <a class="text-primary px-2" href="tel:+393356132110"
+                      ><font-awesome-icon icon="fa-solid fa-phone"
+                    /></a>
                     oppure
                     <a class="text-danger px-2" href="https://api.whatsapp.com/send?phone=393356132110" target="_blank"
                       ><font-awesome-icon icon="fa-brands fa-whatsapp"
@@ -133,7 +157,9 @@
                   </div>
                   <div class="Simens">
                     Filippo:
-                    <a class="text-primary px-2" href="tel:+393899474164"><font-awesome-icon icon="fa-solid fa-phone" /></a>
+                    <a class="text-primary px-2" href="tel:+393899474164"
+                      ><font-awesome-icon icon="fa-solid fa-phone"
+                    /></a>
                     oppure
                     <a class="text-danger px-2" href="https://api.whatsapp.com/send?phone=393899474164" target="_blank"
                       ><font-awesome-icon icon="fa-brands fa-whatsapp"
@@ -141,7 +167,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 ContLogoBottom d-flex">
-                  <img class="LogoBottom" src="../assets/img/LOGO INDACO DECORI.png" alt="">
+                  <img class="LogoBottom" src="../assets/img/LOGO INDACO DECORI.png" alt="" />
                 </div>
               </div>
             </div>
@@ -209,28 +235,51 @@ export default {
     font-size: 3rem;
   }
   .carosello {
-    width: 75%;
+    width: 50%;
   }
-  .ContLogoBottom{
-     justify-content: end;
+  .ContLogoBottom {
+    justify-content: end;
 
-    .LogoBottom{
+    .LogoBottom {
       width: 30%;
+    }
   }
+
+  .carousel-inner {
+    .carousel-item {
+      height: 100%;
+      img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+      }
+    }
   }
-  
 }
 @media screen and (max-width: 991px) {
   .ChiSiam {
     margin-bottom: 3rem;
   }
 
-  .ContLogoBottom{
-     justify-content: end;
+  .ContLogoBottom {
+    justify-content: end;
 
-    .LogoBottom{
+    .LogoBottom {
       width: 70%;
+    }
   }
+
+  .carousel-inner {
+    width: 98%;
+    margin: auto;
+    .carousel-item {
+      height: 100%;
+      img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+      }
+    }
   }
 }
 @media screen and (max-width: 576px) {
@@ -240,16 +289,27 @@ export default {
   .controls {
     margin-top: 3rem;
   }
-  .Adrian{
+  .Adrian {
     padding: 1rem 0;
   }
-  .ContLogoBottom{
-     justify-content: start;
-     padding-top: 2rem;
+  .ContLogoBottom {
+    justify-content: start;
+    padding-top: 2rem;
 
-    .LogoBottom{
+    .LogoBottom {
       width: 70%;
+    }
   }
+
+  .carousel-inner {
+    width: 98%;
+    margin: auto;
+    .carousel-item {
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
   }
 }
 
@@ -292,12 +352,8 @@ export default {
   background-image: url(../assets/img/foto-1/5.jpg);
 }
 
-.infocont{
+.infocont {
   max-width: 100% !important;
-
-  .infoName{
-
-  }
 }
 
 .slideshow {
@@ -318,17 +374,6 @@ export default {
   opacity: 0;
   -webkit-transition: opacity 1s ease-in-out; /* Prefisso per il browser WebKit */
   transition: opacity 1s ease-in-out;
-}
-.carousel-inner {
-  height: 750px;
-  .carousel-item {
-    height: 100%;
-    img {
-      object-fit: cover;
-      object-position: center;
-      height: 100%;
-    }
-  }
 }
 
 .slider.active {

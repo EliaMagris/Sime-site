@@ -25,10 +25,6 @@
           id="inputEmail4"
         />
       </div>
-      <!-- <div class="col-12">
-        <label for="inputAddress" class="text-white form-label">Indirizzo</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="" />
-      </div> -->
       <div class="col-md-6">
         <label for="inputCity" class="text-white form-label">Provincia</label>
         <input
@@ -60,7 +56,8 @@
         ></textarea>
       </div>
       <div class="col-12">
-        <button type="submit" value="Send" class="btn btn-primary">Sign in</button>
+        <button type="submit" value="Send" class="btn btn-primary">Invia !</button>
+        <br>
         <div id="conferma" class="text-light"></div>
       </div>
     </form>
