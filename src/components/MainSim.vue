@@ -15,11 +15,6 @@
           <router-link to="/about-us">
             <button type="button" class="btn btn-danger btn-lg">Chiedi un preventivo</button>
           </router-link>
-          <!-- <router-view v-slot="{ Component }">
-            <transition name="fade">
-              <component :is="Component" />
-            </transition>
-          </router-view> -->
         </div>
       </div>
     </div>
@@ -41,8 +36,8 @@
               </div>
             </div>
             <div class="controls mt-lg-3 mt-xl-2">
-              <button @click="prevSlide" class="prev btn btn-danger"><font-awesome-icon :icon="['fas', 'chevron-left']" /></button>
-              <button @click="nextSlide" class="next btn btn-danger"><font-awesome-icon :icon="['fas', 'chevron-right']" /></button>
+              <button @click="prevSlide" class="prev btn"><font-awesome-icon :icon="['fas', 'chevron-left']" /></button>
+              <button @click="nextSlide" class="next btn"><font-awesome-icon :icon="['fas', 'chevron-right']" /></button>
             </div>
           </div>
         </div>
@@ -50,10 +45,10 @@
     </div>
     <div class="">
       <!-- <h2>I nostri lavori</h2> -->
-      <div class="ourWorks bg-warning">
+      <div class="ourWorks">
         <img class="p-0 m-0 swg" src="../assets/img/wave.svg" alt="" />
         <div class="position-relative cont-our">
-          <h2 class="fs-1 text-center py-2"><i>I nostri lavori</i></h2>
+          <h2 class="fs-1 text-center py-2"><i class="ultratitle">I nostri lavori</i></h2>
 
           <!-- primo carosello -->
 
@@ -315,6 +310,17 @@ export default {
 
 // NAV BAR ITEMS
 
+.ChiSiam {
+    i{
+      color: black;
+    }
+    
+  }
+
+.ultratitle{
+  color: #000000;
+}
+
 .title-container {
   padding-top: 7rem;
   .container-text {
@@ -329,12 +335,13 @@ export default {
 }
 
 .Whois {
-  background-color: #61fafa;
+  background-color: #978b88;
 }
 
 .ourWorks {
   position: relative;
   width: 100%;
+  background-color: #e9e4e2;
 
   .swg {
     position: absolute;
@@ -376,6 +383,18 @@ export default {
   transition: opacity 1s ease-in-out;
 }
 
+.prev{
+background-color: #414937;
+color: white;
+}
+.next{
+  background-color: #414937;
+  color: white;
+}
+
+.btn:hover{
+  background-color:#414937  !important;
+}
 .slider.active {
   display: block;
   opacity: 1;

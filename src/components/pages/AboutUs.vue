@@ -8,36 +8,43 @@
       <div class="col-md-6">
         <label for="inputName" class="text-white form-label">Nome</label>
         <input
+          v-model="name"
           name="name"
           type="text"
           class="form-control"
           placeholder="Mario Rossi.."
           aria-label="First name"
+          required
         />
       </div>
       <div class="col-md-6">
         <label for="inputEmail4" class="text-white form-label">Email</label>
         <input
+          v-model="email"
           name="email"
           type="email"
           class="form-control"
           placeholder="@gmail.com..."
           id="inputEmail4"
+          required
         />
       </div>
       <div class="col-md-6">
         <label for="inputCity" class="text-white form-label">Provincia</label>
         <input
+          v-model="luogo"
           name="luogo"
           type="text"
           class="form-control"
           id="inputCity"
           placeholder="Pordenone..."
+          required
         />
       </div>
       <div class="col-md-6">
         <label class="form-label text-white" for="phone">Telefono</label>
         <input
+          v-model="telefono"
           name="telefono"
           type="text"
           id="phone"
@@ -48,11 +55,13 @@
       <div class="col-12">
         <label for="inputState" class="text-white form-label">Testo</label>
         <textarea
+          v-model="text"
           name="text"
           class="form-control"
           placeholder="Descrivi ciò di cui hai bisogno"
           id="floatingTextarea2"
           style="height: 100px"
+          required
         ></textarea>
       </div>
       <div class="col-12">
@@ -65,13 +74,19 @@
 </template>
 
 <script>
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 
 export default {
   name: "AboutUS",
-  props: {},
-  data() {},
-  mounted() {},
+  data() {
+    return {
+      name: "",       // Proprietà per memorizzare il nome
+      email: "",      // Proprietà per memorizzare l'email
+      luogo: "",      // Proprietà per memorizzare la provincia
+      telefono: "",   // Proprietà per memorizzare il telefono
+      text: ""        // Proprietà per memorizzare il testo
+    };
+  },
   methods: {
     sendEmail() {
       emailjs
@@ -84,16 +99,18 @@ export default {
         .then(
           (result) => {
             console.log("SUCCESS!", result.text);
-            document.getElementById('conferma').innerHTML = "Congratulazioni! Email inviata con successo! ti risponderò non appena possibile :)"
+            document.getElementById('conferma').innerHTML = "Congratulazioni! Email inviata con successo! Ti risponderò non appena possibile :)"
           },
           (error) => {
-            console.log("FAILED...", error.text);
+            console.log("FAILED...", error)
+
           }
         );
     },
   },
 };
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
